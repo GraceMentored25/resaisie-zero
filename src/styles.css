@@ -1,14 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@1,6..72,500&display=swap");
 
 :root {
-  --ink: #19231f;
-  --muted: #68736e;
-  --paper: #f4f1e8;
-  --card: #fffdf7;
-  --line: #d8d5cb;
-  --lime: #dfff67;
-  --mint: #9ce5bf;
-  --deep: #17362b;
+  --ink: #17162e;
+  --muted: #66658a;
+  --paper: #f4f3ff;
+  --card: #fbfaff;
+  --line: #dcd9f6;
+  --lime: #7c5ce7;
+  --mint: #93c5fd;
+  --deep: #17113d;
   --danger: #a74432;
   color-scheme: light;
   font-family: "Manrope", sans-serif;
@@ -27,11 +27,9 @@ html {
 body {
   margin: 0;
   min-width: 320px;
-  background:
-    linear-gradient(rgba(25, 35, 31, 0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(25, 35, 31, 0.035) 1px, transparent 1px),
+  background: linear-gradient(145deg, rgba(59, 130, 246, 0.11), transparent 38%),
+    linear-gradient(320deg, rgba(124, 92, 231, 0.12), transparent 42%),
     var(--paper);
-  background-size: 32px 32px;
 }
 
 button,
@@ -72,8 +70,8 @@ select {
   height: 38px;
   place-items: center;
   border-radius: 50%;
-  background: var(--ink);
-  color: var(--lime);
+  background: linear-gradient(135deg, #2563eb, #7c3aed);
+  color: white;
   font-family: "DM Mono", monospace;
   font-size: 0.8rem;
 }
@@ -93,7 +91,7 @@ select {
 }
 
 .privacy-pill span {
-  color: #29a66c;
+  color: #2563eb;
 }
 
 .hero {
@@ -109,7 +107,7 @@ select {
   inset: 0 -12vw 0 40%;
   z-index: -1;
   opacity: 0.32;
-  background: linear-gradient(90deg, var(--paper) 0%, rgba(244, 241, 232, 0.5) 28%, transparent 70%), url("/public/assets/workflow-hero.png") center / cover;
+  background: linear-gradient(90deg, var(--paper) 0%, rgba(244, 243, 255, 0.5) 28%, transparent 70%), url("/public/assets/workflow-hero.png") center / cover;
   filter: saturate(0.88) contrast(1.05);
 }
 
@@ -139,7 +137,7 @@ select {
 .hero h1 em {
   font-family: "Newsreader", serif;
   font-weight: 500;
-  color: #477d65;
+  color: #5b4fc7;
 }
 
 .hero p {
@@ -185,7 +183,7 @@ select {
 .section-number {
   display: block;
   margin-bottom: 14px;
-  color: #67917f;
+  color: #6554c0;
 }
 
 h2 {
@@ -330,21 +328,21 @@ a:focus-visible {
 }
 
 .results .live-label {
-  border-color: #4c675d;
-  color: #b4c8bf;
+  border-color: #51458a;
+  color: #d3cff4;
 }
 
 .metrics {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   margin: 54px 0 32px;
-  border: 1px solid #4a6259;
+  border: 1px solid #453a7a;
 }
 
 .metrics article {
   min-height: 190px;
   padding: 28px;
-  border-right: 1px solid #4a6259;
+  border-right: 1px solid #453a7a;
 }
 
 .metrics article:last-child {
@@ -354,7 +352,7 @@ a:focus-visible {
 .metrics span {
   display: block;
   margin-bottom: 42px;
-  color: #a9bbb4;
+  color: #c9c5ea;
   font-size: 0.76rem;
   text-transform: uppercase;
   letter-spacing: 0.06em;
@@ -369,16 +367,16 @@ a:focus-visible {
 
 .metric-accent {
   background: var(--lime);
-  color: var(--ink);
+  color: white;
 }
 
 .metric-accent span {
-  color: #52612d;
+  color: #efedff;
 }
 
 .recommendation {
   padding: 34px;
-  border: 1px solid #4a6259;
+  border: 1px solid #453a7a;
 }
 
 .recommendation-kicker {
@@ -394,7 +392,7 @@ a:focus-visible {
 .recommendation p {
   max-width: 730px;
   margin: 0;
-  color: #bacac4;
+  color: #d0cdea;
   line-height: 1.65;
 }
 
@@ -405,7 +403,7 @@ a:focus-visible {
   padding: 18px 22px;
   border-left: 3px solid var(--lime);
   background: rgba(255,255,255,0.04);
-  color: #dce9e3;
+  color: #dedbf3;
   line-height: 1.55;
 }
 
@@ -420,11 +418,11 @@ a:focus-visible {
 .button-primary {
   border: 1px solid var(--lime);
   background: var(--lime);
-  color: var(--ink);
+  color: white;
 }
 
 .button-ghost {
-  border: 1px solid #6b8279;
+  border: 1px solid #7369a5;
   background: transparent;
   color: white;
 }
@@ -507,7 +505,7 @@ footer {
   .metrics article {
     min-height: 150px;
     border-right: 0;
-    border-bottom: 1px solid #4a6259;
+    border-bottom: 1px solid #453a7a;
   }
 
   .metrics article:last-child {
