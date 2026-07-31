@@ -38,7 +38,7 @@ Ces adaptations conservent les interactions essentielles des composants sources 
 
 ## Référence d’interface
 
-La présentation des résultats adapte le [système Visitors sur Refero](https://styles.refero.design/style/e7876363-181a-44a9-9e5c-2255cf98aea5) : panneau analytique sobre, bordures fines, hiérarchie claire des métriques et accent lavande. Le contenu, la palette et les interactions restent propres à ReSaisie Zéro.
+L’ensemble de l’application adapte le [système Visitors sur Refero](https://styles.refero.design/style/e7876363-181a-44a9-9e5c-2255cf98aea5) : navigation en pilule, toile blanche, bande produit bleu-lavande, surfaces plates, bordures fines, contrôles arrondis et panneaux analytiques lisibles. La palette reprend les tokens Visitors Carbon, Graphite, Ash, Fog, Mist, Linen, Paper White, Lavender, Iris, Sky, Mint et Mint Wash. Les composants, le contenu et les interactions restent propres à ReSaisie Zéro.
 
 ## Confidentialité
 
@@ -46,4 +46,4 @@ L’application ne possède ni compte utilisateur, ni API, ni serveur applicatif
 
 ## Version
 
-Version actuelle : **1.4.0**
+Version actuelle : **2.0.0**

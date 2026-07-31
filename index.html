@@ -7,166 +7,177 @@
       name="description"
       content="Repérez les ressaisies inutiles de votre parcours client et chiffrez le temps à récupérer."
     />
-    <meta name="theme-color" content="#17113d" />
+    <meta name="theme-color" content="#ffffff" />
     <link rel="icon" href="/public/assets/favicon.svg" type="image/svg+xml" />
     <title>ReSaisie Zéro — Libérez du temps dans vos parcours clients</title>
-    <link rel="stylesheet" href="/src/styles.css?v=1.4.0" />
+    <link rel="stylesheet" href="/src/styles.css?v=2.0.0" />
   </head>
   <body>
     <header class="site-header">
-      <a class="brand" href="/" aria-label="ReSaisie Zéro, accueil">
-        <span class="brand-mark" aria-hidden="true">RØ</span>
-        <span>ReSaisie Zéro</span>
-      </a>
-      <span class="privacy-pill">
-        <span aria-hidden="true">●</span> 100 % local
-      </span>
+      <nav class="nav-pill" aria-label="Navigation principale">
+        <a class="brand" href="/" aria-label="ReSaisie Zéro, accueil">
+          <span class="brand-mark" aria-hidden="true">RØ</span>
+          <span>ReSaisie Zéro</span>
+        </a>
+        <div class="nav-links">
+          <a href="#audit">Parcours</a>
+          <a href="#resultats">Impact</a>
+          <a href="#methode">Méthode</a>
+        </div>
+        <a class="nav-action" href="#audit">Commencer</a>
+      </nav>
     </header>
 
     <main>
       <section class="hero" aria-labelledby="hero-title">
-        <h1 id="hero-title">
-          Combien vous coûte<br />
-          <em>la même information</em> ?
-        </h1>
+        <div class="announcement-chip">
+          <span>Analyse locale</span>
+          Vos données ne quittent pas votre navigateur
+        </div>
+        <h1 id="hero-title">Mesurez le coût invisible<br />de vos doubles saisies.</h1>
         <p>
-          Cartographiez un parcours client, repérez où les données sont
-          ressaisies et trouvez l’automatisation qui paiera en premier.
+          Décrivez votre parcours client, repérez les informations répétées et
+          identifiez l’automatisation qui rendra du temps à votre équipe.
         </p>
+        <div class="hero-actions">
+          <a class="button button-primary hero-cta" href="#audit">Analyser mon parcours</a>
+          <a class="button button-ghost" href="#methode">Voir la méthode</a>
+        </div>
+      </section>
+
+      <section class="hero-visual-band" aria-label="Exemple de diagnostic ReSaisie Zéro">
         <div class="hero-art" aria-hidden="true"></div>
-        <a class="hero-cta" href="#audit">Lancer mon audit <span>↓</span></a>
+        <div class="dashboard-preview">
+          <div class="preview-head">
+            <div>
+              <span class="preview-caption">Exemple de diagnostic</span>
+              <strong>Accueil d’un nouveau client</strong>
+            </div>
+            <span class="preview-status"><i aria-hidden="true"></i> Calcul terminé</span>
+          </div>
+          <div class="preview-metrics">
+            <div><span>Ressaisies</span><strong>9</strong></div>
+            <div><span>Temps récupérable</span><strong>72 h</strong></div>
+            <div class="preview-positive"><span>Économie annuelle</span><strong>2 520 €</strong></div>
+          </div>
+          <div class="preview-route">
+            <span>Priorité recommandée</span>
+            <strong>Rendez-vous <i>→</i> Fiche client</strong>
+            <small>4 informations peuvent être transmises automatiquement.</small>
+          </div>
+        </div>
       </section>
 
       <section id="audit" class="workspace" aria-labelledby="audit-title">
-        <div class="workspace-head">
-          <div>
-            <span class="section-number">01</span>
-            <h2 id="audit-title">Décrivez votre parcours</h2>
-          </div>
-          <div class="template-picker">
-            <span id="template-label">Partir d’un modèle</span>
-            <div class="select-shell">
-              <button class="select-trigger" id="template-trigger" type="button" aria-expanded="false" aria-haspopup="listbox" aria-labelledby="template-label template-value">
-                <span class="select-value-wrap">
-                  <span id="template-value">Accueil d’un client</span>
-                  <small id="template-description">Collecte, rendez-vous, CRM et facturation</small>
-                </span>
-                <svg viewBox="0 0 20 20" aria-hidden="true"><path d="m6 8 4 4 4-4" /></svg>
-              </button>
-              <div class="select-menu" id="template-menu" role="listbox" aria-labelledby="template-label" hidden>
-                <button class="select-option" type="button" role="option" data-value="onboarding" aria-selected="true"><span>Accueil d’un client</span><small>Collecte, rendez-vous, CRM et facturation</small></button>
-                <button class="select-option" type="button" role="option" data-value="appointment" aria-selected="false"><span>Prise de rendez-vous</span><small>Messagerie, agenda et dossier client</small></button>
-                <button class="select-option" type="button" role="option" data-value="order" aria-selected="false"><span>Traitement d’une commande</span><small>Boutique, préparation, transport et facture</small></button>
-                <button class="select-option" type="button" role="option" data-value="blank" aria-selected="false"><span>Parcours vierge</span><small>Commencer avec deux étapes à personnaliser</small></button>
-              </div>
-            </div>
-            <select id="template-select" hidden tabindex="-1" aria-hidden="true">
-              <option value="onboarding">Accueil d’un client</option>
-              <option value="appointment">Prise de rendez-vous</option>
-              <option value="order">Traitement d’une commande</option>
-              <option value="blank">Parcours vierge</option>
-            </select>
-          </div>
+        <div class="section-intro">
+          <span class="section-label">01 · Votre parcours</span>
+          <h2 id="audit-title">Décrivez ce qui se passe vraiment.</h2>
+          <p>Partez d’un modèle puis adaptez chaque étape à vos outils actuels.</p>
         </div>
 
-        <form id="workflow-form">
-          <div class="settings-grid">
-            <label class="field field-wide">
-              <span class="field-label">Nom du parcours</span>
-              <span class="field-control"><input id="workflow-name" name="name" autocomplete="off" /></span>
-              <small class="field-description">Utilisé pour nommer votre diagnostic exporté.</small>
-            </label>
-            <label class="field">
-              <span class="field-label">Parcours / mois</span>
-              <span class="field-control number-field">
-                <button type="button" data-number-step="down" aria-label="Diminuer le nombre de parcours"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 10h10" /></svg></button>
-                <input id="runs-per-month" name="runs" type="number" min="1" step="1" required />
-                <button type="button" data-number-step="up" aria-label="Augmenter le nombre de parcours"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 5v10M5 10h10" /></svg></button>
-              </span>
-              <small class="field-error">Saisissez au moins un parcours.</small>
-            </label>
-            <label class="field">
-              <span class="field-label">Coût horaire (€)</span>
-              <span class="field-control number-field">
-                <button type="button" data-number-step="down" aria-label="Diminuer le coût horaire"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 10h10" /></svg></button>
-                <input id="hourly-cost" name="cost" type="number" min="1" step="1" required />
-                <button type="button" data-number-step="up" aria-label="Augmenter le coût horaire"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 5v10M5 10h10" /></svg></button>
-              </span>
-              <small class="field-error">Le coût doit être supérieur à zéro.</small>
-            </label>
-            <label class="field">
-              <span class="field-label">Minutes / ressaisie</span>
-              <span class="field-control number-field">
-                <button type="button" data-number-step="down" aria-label="Diminuer la durée"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 10h10" /></svg></button>
-                <input id="minutes-per-copy" name="minutes" type="number" min="0.1" step="0.1" required />
-                <button type="button" data-number-step="up" aria-label="Augmenter la durée"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 5v10M5 10h10" /></svg></button>
-              </span>
-              <small class="field-error">La durée doit être supérieure à zéro.</small>
-            </label>
+        <div class="audit-panel">
+          <div class="panel-toolbar">
+            <div class="toolbar-title">
+              <span>Paramètres de l’analyse</span>
+              <small>Les résultats se recalculent instantanément.</small>
+            </div>
+            <div class="template-picker">
+              <span id="template-label">Partir d’un modèle</span>
+              <div class="select-shell">
+                <button class="select-trigger" id="template-trigger" type="button" aria-expanded="false" aria-haspopup="listbox" aria-labelledby="template-label template-value">
+                  <span class="select-value-wrap">
+                    <span id="template-value">Accueil d’un client</span>
+                    <small id="template-description">Collecte, rendez-vous, CRM et facturation</small>
+                  </span>
+                  <svg viewBox="0 0 20 20" aria-hidden="true"><path d="m6 8 4 4 4-4" /></svg>
+                </button>
+                <div class="select-menu" id="template-menu" role="listbox" aria-labelledby="template-label" hidden>
+                  <button class="select-option" type="button" role="option" data-value="onboarding" aria-selected="true"><span>Accueil d’un client</span><small>Collecte, rendez-vous, CRM et facturation</small></button>
+                  <button class="select-option" type="button" role="option" data-value="appointment" aria-selected="false"><span>Prise de rendez-vous</span><small>Messagerie, agenda et dossier client</small></button>
+                  <button class="select-option" type="button" role="option" data-value="order" aria-selected="false"><span>Traitement d’une commande</span><small>Boutique, préparation, transport et facture</small></button>
+                  <button class="select-option" type="button" role="option" data-value="blank" aria-selected="false"><span>Parcours vierge</span><small>Commencer avec deux étapes à personnaliser</small></button>
+                </div>
+              </div>
+              <select id="template-select" hidden tabindex="-1" aria-hidden="true">
+                <option value="onboarding">Accueil d’un client</option>
+                <option value="appointment">Prise de rendez-vous</option>
+                <option value="order">Traitement d’une commande</option>
+                <option value="blank">Parcours vierge</option>
+              </select>
+            </div>
           </div>
 
-          <div class="steps-header">
-            <div>
-              <span class="section-number">02</span>
-              <h2>Suivez la donnée</h2>
+          <form id="workflow-form">
+            <div class="settings-grid">
+              <label class="field field-wide">
+                <span class="field-label">Nom du parcours</span>
+                <span class="field-control"><input id="workflow-name" name="name" autocomplete="off" /></span>
+                <small class="field-description">Utilisé pour nommer votre diagnostic exporté.</small>
+              </label>
+              <label class="field">
+                <span class="field-label">Parcours / mois</span>
+                <span class="field-control number-field">
+                  <button type="button" data-number-step="down" aria-label="Diminuer le nombre de parcours"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 10h10" /></svg></button>
+                  <input id="runs-per-month" name="runs" type="number" min="1" step="1" required />
+                  <button type="button" data-number-step="up" aria-label="Augmenter le nombre de parcours"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 5v10M5 10h10" /></svg></button>
+                </span>
+                <small class="field-error">Saisissez au moins un parcours.</small>
+              </label>
+              <label class="field">
+                <span class="field-label">Coût horaire (€)</span>
+                <span class="field-control number-field">
+                  <button type="button" data-number-step="down" aria-label="Diminuer le coût horaire"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 10h10" /></svg></button>
+                  <input id="hourly-cost" name="cost" type="number" min="1" step="1" required />
+                  <button type="button" data-number-step="up" aria-label="Augmenter le coût horaire"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 5v10M5 10h10" /></svg></button>
+                </span>
+                <small class="field-error">Le coût doit être supérieur à zéro.</small>
+              </label>
+              <label class="field">
+                <span class="field-label">Minutes / ressaisie</span>
+                <span class="field-control number-field">
+                  <button type="button" data-number-step="down" aria-label="Diminuer la durée"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 10h10" /></svg></button>
+                  <input id="minutes-per-copy" name="minutes" type="number" min="0.1" step="0.1" required />
+                  <button type="button" data-number-step="up" aria-label="Augmenter la durée"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 5v10M5 10h10" /></svg></button>
+                </span>
+                <small class="field-error">La durée doit être supérieure à zéro.</small>
+              </label>
             </div>
-            <button class="button button-secondary" id="add-step" type="button">
-              + Ajouter une étape
-            </button>
-          </div>
-          <p class="helper">
-            Séparez les champs par une virgule. Exemple : nom, e-mail, adresse.
-          </p>
-          <ol id="steps-list" class="steps-list" aria-live="polite"></ol>
-        </form>
+
+            <div class="steps-header">
+              <div>
+                <span>Étapes et informations</span>
+                <small>Indiquez ce qui est saisi dans chaque outil.</small>
+              </div>
+              <button class="button button-secondary" id="add-step" type="button">Ajouter une étape</button>
+            </div>
+            <p class="helper">Séparez les champs par une virgule. Exemple : nom, e-mail, adresse.</p>
+            <ol id="steps-list" class="steps-list" aria-live="polite"></ol>
+          </form>
+        </div>
       </section>
 
-      <section class="results" aria-labelledby="results-title">
-        <div class="results-heading">
-          <div>
-            <span class="section-number section-number-light">03</span>
-            <h2 id="results-title">Ce que vous pouvez récupérer</h2>
-          </div>
-          <span id="result-label" class="live-label">
-            <span class="status-dot" aria-hidden="true"></span>
-            Diagnostic en direct
-          </span>
+      <section id="resultats" class="results" aria-labelledby="results-title">
+        <div class="section-intro section-intro-results">
+          <span class="section-label">02 · Votre impact</span>
+          <h2 id="results-title">Ce que vous pouvez récupérer.</h2>
+          <span id="result-label" class="live-label"><span class="status-dot" aria-hidden="true"></span> Diagnostic en direct</span>
         </div>
 
         <div class="impact-panel">
           <div class="impact-panel-head">
-            <div>
-              <span class="panel-kicker">Impact estimé</span>
-              <p>Projection annuelle à partir de votre parcours actuel.</p>
-            </div>
+            <div><span class="panel-kicker">Projection annuelle</span><p>Calculée à partir de votre parcours actuel.</p></div>
             <span class="calculation-note">Calcul local</span>
           </div>
-
           <div class="metrics" aria-live="polite">
-            <article>
-              <span>Ressaisies par parcours</span>
-              <strong id="duplicate-count">—</strong>
-              <small>copies évitables à chaque passage</small>
-            </article>
-            <article>
-              <span>Temps récupérable</span>
-              <div class="metric-value"><strong id="hours-saved">—</strong><em>h / an</em></div>
-              <small>capacité rendue à votre équipe</small>
-            </article>
-            <article class="metric-accent">
-              <span>Économie potentielle</span>
-              <strong id="cost-saved">—</strong>
-              <small>coût annuel évitable estimé</small>
-            </article>
+            <article><span>Ressaisies par parcours</span><strong id="duplicate-count">—</strong><small>copies évitables à chaque passage</small></article>
+            <article><span>Temps récupérable</span><div class="metric-value"><strong id="hours-saved">—</strong><em>h / an</em></div><small>capacité rendue à votre équipe</small></article>
+            <article class="metric-accent"><span>Économie potentielle</span><strong id="cost-saved">—</strong><small>coût annuel évitable estimé</small></article>
           </div>
-
           <div class="insight-grid">
             <div class="recommendation spotlight-card">
               <span class="recommendation-kicker">Premier chantier recommandé</span>
               <h3 id="priority-title">Complétez au moins deux étapes</h3>
-              <p id="priority-copy">
-                Le diagnostic apparaîtra ici dès qu’une donnée sera recopiée.
-              </p>
+              <p id="priority-copy">Le diagnostic apparaîtra ici dès qu’une donnée sera recopiée.</p>
             </div>
             <div id="automation-fit" class="automation-fit" aria-live="polite"></div>
           </div>
@@ -174,67 +185,38 @@
 
         <div class="result-actions">
           <button class="button button-primary interactive-hover-button" id="export-report" type="button">
-            <span class="button-dot" aria-hidden="true"></span>
-            <span class="button-label">Exporter le diagnostic</span>
-            <span class="button-state-icon" aria-hidden="true">
-              <svg viewBox="0 0 20 20" role="presentation">
-                <path d="m5 10 3 3 7-7" />
-              </svg>
-            </span>
+            <span class="button-dot" aria-hidden="true"></span><span class="button-label">Exporter le diagnostic</span>
+            <span class="button-state-icon" aria-hidden="true"><svg viewBox="0 0 20 20" role="presentation"><path d="m5 10 3 3 7-7" /></svg></span>
           </button>
-          <button class="button button-ghost" id="reset-workflow" type="button">
-            Effacer mes données
-          </button>
+          <button class="button button-ghost" id="reset-workflow" type="button">Effacer mes données</button>
         </div>
       </section>
 
-      <section class="method">
-        <span class="section-number">04</span>
-        <div>
-          <h2>Un chiffre utile,<br />pas une promesse magique.</h2>
-        </div>
+      <section id="methode" class="method">
+        <span class="section-label">03 · Méthode</span>
+        <div><h2>Des chiffres lisibles,<br />sans promesse magique.</h2></div>
         <div class="method-copy">
-          <p>
-            L’estimation multiplie les ressaisies détectées par leur durée,
-            votre fréquence mensuelle et votre coût horaire.
-          </p>
-          <p>
-            Vos données restent dans ce navigateur. Aucun compte, aucun
-            traqueur, aucune information métier envoyée ailleurs.
-          </p>
+          <p>L’estimation multiplie les ressaisies détectées par leur durée, votre fréquence mensuelle et votre coût horaire.</p>
+          <p>Vos données restent dans ce navigateur. Aucun compte, aucun traqueur, aucune information métier envoyée ailleurs.</p>
         </div>
       </section>
     </main>
 
-    <footer>
-      <span>ReSaisie Zéro</span>
-      <span>Conçu pour les indépendants et petites équipes.</span>
-    </footer>
+    <footer><span>ReSaisie Zéro</span><span>Conçu pour les indépendants et petites équipes.</span></footer>
 
     <template id="step-template">
       <li class="step-card">
         <div class="step-index" aria-hidden="true"></div>
         <div class="step-fields">
-          <label class="field">
-            <span class="field-label">Étape</span>
-            <span class="field-control"><input data-field="name" autocomplete="off" /></span>
-          </label>
-          <label class="field">
-            <span class="field-label">Outil utilisé</span>
-            <span class="field-control"><input data-field="tool" autocomplete="off" /></span>
-          </label>
-          <label class="field fields-input">
-            <span class="field-label">Informations saisies</span>
-            <span class="field-control"><input data-field="fields" autocomplete="off" placeholder="nom, e-mail, adresse" /></span>
-          </label>
+          <label class="field"><span class="field-label">Étape</span><span class="field-control"><input data-field="name" autocomplete="off" /></span></label>
+          <label class="field"><span class="field-label">Outil utilisé</span><span class="field-control"><input data-field="tool" autocomplete="off" /></span></label>
+          <label class="field fields-input"><span class="field-label">Informations saisies</span><span class="field-control"><input data-field="fields" autocomplete="off" placeholder="nom, e-mail, adresse" /></span></label>
         </div>
-        <button class="remove-step" type="button" aria-label="Supprimer cette étape">
-          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="m6 6 8 8M14 6l-8 8" /></svg>
-        </button>
+        <button class="remove-step" type="button" aria-label="Supprimer cette étape"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m6 6 8 8M14 6l-8 8" /></svg></button>
       </li>
     </template>
 
     <div id="toast" class="toast" role="status" aria-live="polite"></div>
-    <script type="module" src="/src/app.js?v=1.4.0"></script>
+    <script type="module" src="/src/app.js?v=2.0.0"></script>
   </body>
 </html>
