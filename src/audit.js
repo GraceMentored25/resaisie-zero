@@ -92,6 +92,17 @@ export function analyzeWorkflow(workflow) {
     hoursSavedPerYear,
     costSavedPerYear,
     priority: priority?.score ? priority : null,
+    automationFit: duplicateCopiesPerRun
+      ? {
+          label: "Automatisation déterministe",
+          copy:
+            "Ce parcours suit des étapes répétables : commencez par une intégration simple ou un script. N’ajoutez une IA que si le routage dépend d’un contenu ambigu.",
+        }
+      : {
+          label: "Cartographie à compléter",
+          copy:
+            "Ajoutez les informations réellement saisies à chaque étape pour choisir la bonne automatisation.",
+        },
   };
 }
 

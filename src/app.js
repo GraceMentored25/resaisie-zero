@@ -67,6 +67,7 @@ const elements = {
   costSaved: document.querySelector("#cost-saved"),
   priorityTitle: document.querySelector("#priority-title"),
   priorityCopy: document.querySelector("#priority-copy"),
+  automationFit: document.querySelector("#automation-fit"),
   resultLabel: document.querySelector("#result-label"),
   toast: document.querySelector("#toast"),
 };
@@ -161,6 +162,7 @@ function renderAnalysis() {
       elements.priorityCopy.textContent =
         "Ajoutez les informations saisies à chaque étape pour faire apparaître les doublons.";
     }
+    elements.automationFit.innerHTML = `<strong>${analysis.automationFit.label}</strong><span>${analysis.automationFit.copy}</span>`;
   } catch (error) {
     analysis = null;
     elements.duplicateCount.textContent = "—";
@@ -169,6 +171,7 @@ function renderAnalysis() {
     elements.priorityTitle.textContent = "Diagnostic incomplet";
     elements.priorityCopy.textContent = error.message;
     elements.resultLabel.textContent = "À compléter";
+    elements.automationFit.textContent = "Le conseil de mise en œuvre apparaîtra ici.";
   }
 }
 
