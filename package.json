@@ -4,6 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "build": "node scripts/build.js",
     "test": "node --test",
     "check": "node --check src/audit.js && node --check src/app.js"
   }
