@@ -49,7 +49,7 @@ a { color: inherit; }
 }
 
 .brand { display: flex; align-items: center; gap: 9px; padding-left: 5px; text-decoration: none; font-size: 14px; font-weight: 600; letter-spacing: -.32px; }
-.brand-mark { display: grid; width: 32px; height: 32px; place-items: center; border-radius: 50%; background: var(--carbon); color: white; font: 500 10px "JetBrains Mono", monospace; }
+.brand-logo { display: block; width: 32px; height: 32px; flex: 0 0 32px; border-radius: 50%; }
 .nav-links { display: flex; gap: 4px; }
 .nav-links a { padding: 9px 12px; border-radius: 9999px; color: var(--graphite); text-decoration: none; font-size: 13px; font-weight: 500; transition: background 180ms ease, color 180ms ease; }
 .nav-links a:hover { background: var(--mist); color: var(--carbon); }
