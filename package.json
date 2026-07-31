@@ -1,0 +1,10 @@
+{
+  "name": "resaisie-zero",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test",
+    "check": "node --check src/audit.js && node --check src/app.js"
+  }
+}
