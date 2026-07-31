@@ -2,7 +2,7 @@
 
 | N° | MVP | Version | GitHub | Application Vercel |
 |---:|---|---:|---|---|
-| 1 | ReSaisie Zéro — audit anti-copier-coller pour TPE | 1.0.0 | [GitHub](https://github.com/GraceMentored25/resaisie-zero) | Déploiement en cours |
+| 1 | ReSaisie Zéro — audit anti-copier-coller pour TPE | 1.0.0 | [GitHub](https://github.com/GraceMentored25/resaisie-zero) | [Ouvrir l’application](https://configurons-ensemble-une-t-che-plan.vercel.app) |
 
 ## Historique
 
