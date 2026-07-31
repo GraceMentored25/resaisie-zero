@@ -60,7 +60,7 @@
                 <button class="select-option" type="button" role="option" data-value="blank" aria-selected="false"><span>Parcours vierge</span><small>Commencer avec deux étapes à personnaliser</small></button>
               </div>
             </div>
-            <select id="template-select" class="visually-hidden" tabindex="-1" aria-hidden="true">
+            <select id="template-select" hidden tabindex="-1" aria-hidden="true">
               <option value="onboarding">Accueil d’un client</option>
               <option value="appointment">Prise de rendez-vous</option>
               <option value="order">Traitement d’une commande</option>
@@ -80,7 +80,7 @@
               <span class="field-label">Parcours / mois</span>
               <span class="field-control number-field">
                 <button type="button" data-number-step="down" aria-label="Diminuer le nombre de parcours"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 10h10" /></svg></button>
-                <input id="runs-per-month" name="runs" type="number" min="1" step="1" />
+                <input id="runs-per-month" name="runs" type="number" min="1" step="1" required />
                 <button type="button" data-number-step="up" aria-label="Augmenter le nombre de parcours"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 5v10M5 10h10" /></svg></button>
               </span>
               <small class="field-error">Saisissez au moins un parcours.</small>
@@ -89,7 +89,7 @@
               <span class="field-label">Coût horaire (€)</span>
               <span class="field-control number-field">
                 <button type="button" data-number-step="down" aria-label="Diminuer le coût horaire"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 10h10" /></svg></button>
-                <input id="hourly-cost" name="cost" type="number" min="1" step="1" />
+                <input id="hourly-cost" name="cost" type="number" min="1" step="1" required />
                 <button type="button" data-number-step="up" aria-label="Augmenter le coût horaire"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 5v10M5 10h10" /></svg></button>
               </span>
               <small class="field-error">Le coût doit être supérieur à zéro.</small>
@@ -98,7 +98,7 @@
               <span class="field-label">Minutes / ressaisie</span>
               <span class="field-control number-field">
                 <button type="button" data-number-step="down" aria-label="Diminuer la durée"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 10h10" /></svg></button>
-                <input id="minutes-per-copy" name="minutes" type="number" min="0.1" step="0.1" />
+                <input id="minutes-per-copy" name="minutes" type="number" min="0.1" step="0.1" required />
                 <button type="button" data-number-step="up" aria-label="Augmenter la durée"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 5v10M5 10h10" /></svg></button>
               </span>
               <small class="field-error">La durée doit être supérieure à zéro.</small>

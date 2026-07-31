@@ -42,4 +42,4 @@ L’application ne possède ni compte utilisateur, ni API, ni serveur applicatif
 
 ## Version
 
-Version actuelle : **1.3.0**
+Version actuelle : **1.3.1**

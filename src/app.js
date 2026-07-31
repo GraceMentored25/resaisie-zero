@@ -96,6 +96,15 @@ function showToast(message) {
   toastTimer = setTimeout(() => elements.toast.classList.remove("is-visible"), 2400);
 }
 
+function validateField(input) {
+  const field = input.closest(".field");
+  if (!field || !input.matches("input")) return true;
+  const invalid = !input.checkValidity();
+  field.toggleAttribute("data-invalid", invalid);
+  input.setAttribute("aria-invalid", String(invalid));
+  return !invalid;
+}
+
 function syncSettings() {
   elements.name.value = state.name;
   elements.runs.value = state.runsPerMonth;
@@ -254,6 +263,7 @@ function applyTemplate(templateName) {
 }
 
 elements.form.addEventListener("input", (event) => {
+  validateField(event.target);
   if (event.target.closest(".step-card")) return;
   state.name = elements.name.value;
   state.runsPerMonth = Number(elements.runs.value);

@@ -368,7 +368,7 @@ h2 {
   box-shadow: 0 0 0 3px rgba(124, 92, 231, 0.14), inset 0 1px 0 white;
 }
 
-.field-control:has(input:user-invalid) {
+.field[data-invalid] .field-control {
   border-color: var(--danger);
 }
 
@@ -403,7 +403,7 @@ a:focus-visible {
   color: var(--danger);
 }
 
-.field:has(input:user-invalid) .field-error {
+.field[data-invalid] .field-error {
   display: block;
 }
 
