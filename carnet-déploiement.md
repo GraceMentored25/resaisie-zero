@@ -2,7 +2,7 @@
 
 | N° | MVP | Version | GitHub | Application Vercel |
 |---:|---|---:|---|---|
-| 1 | ReSaisie Zéro — audit anti-copier-coller pour TPE | 1.1.2 | [GitHub](https://github.com/GraceMentored25/resaisie-zero) | [Ouvrir l’application](https://resaisie-zero.vercel.app) |
+| 1 | ReSaisie Zéro — audit anti-copier-coller pour TPE | 1.2.0 | [GitHub](https://github.com/GraceMentored25/resaisie-zero) | [Ouvrir l’application](https://resaisie-zero.vercel.app) |
 
 ## Historique
 
@@ -12,3 +12,4 @@
 - **2026-07-31 — URL publique :** alias court `resaisie-zero.vercel.app` attribué au déploiement de production.
 - **2026-07-31 — 1.1.1 :** palette bleu-violet appliquée, fond quadrillé supprimé et mentions techniques de version retirées de l’interface publique.
 - **2026-07-31 — 1.1.2 :** titre public reformulé autour du bénéfice utilisateur et couleur du navigateur alignée sur la nouvelle palette.
+- **2026-07-31 — 1.2.0 :** interface retravaillée avec le taste-skill et deux composants 21st.dev adaptés : Spotlight Card et Interactive Hover Button.

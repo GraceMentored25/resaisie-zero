@@ -120,7 +120,7 @@
           </article>
         </div>
 
-        <div class="recommendation">
+        <div class="recommendation spotlight-card">
           <span class="recommendation-kicker">Premier chantier recommandé</span>
           <h3 id="priority-title">Complétez au moins deux étapes</h3>
           <p id="priority-copy">
@@ -130,8 +130,14 @@
         <div id="automation-fit" class="automation-fit" aria-live="polite"></div>
 
         <div class="result-actions">
-          <button class="button button-primary" id="export-report" type="button">
-            Exporter le diagnostic
+          <button class="button button-primary interactive-hover-button" id="export-report" type="button">
+            <span class="button-dot" aria-hidden="true"></span>
+            <span class="button-label">Exporter le diagnostic</span>
+            <span class="button-state-icon" aria-hidden="true">
+              <svg viewBox="0 0 20 20" role="presentation">
+                <path d="m5 10 3 3 7-7" />
+              </svg>
+            </span>
           </button>
           <button class="button button-ghost" id="reset-workflow" type="button">
             Effacer mes données

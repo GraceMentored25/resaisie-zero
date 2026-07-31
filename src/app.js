@@ -218,11 +218,26 @@ document.querySelector("#reset-workflow").addEventListener("click", () => {
   showToast("Vos données locales ont été effacées.");
 });
 
-document.querySelector("#export-report").addEventListener("click", () => {
+const exportButton = document.querySelector("#export-report");
+const exportButtonLabel = exportButton.querySelector(".button-label");
+
+document.querySelector(".spotlight-card")?.addEventListener("pointermove", (event) => {
+  const card = event.currentTarget;
+  const bounds = card.getBoundingClientRect();
+  card.style.setProperty("--spotlight-x", `${event.clientX - bounds.left}px`);
+  card.style.setProperty("--spotlight-y", `${event.clientY - bounds.top}px`);
+});
+
+exportButton.addEventListener("click", async () => {
   if (!analysis) {
     showToast("Complétez le diagnostic avant de l’exporter.");
     return;
   }
+  exportButton.disabled = true;
+  exportButton.dataset.state = "loading";
+  exportButtonLabel.textContent = "Préparation du fichier";
+  await new Promise((resolve) => setTimeout(resolve, 240));
+
   const content = buildMarkdownReport(state, analysis);
   const blob = new Blob([content], { type: "text/markdown;charset=utf-8" });
   const url = URL.createObjectURL(blob);
@@ -237,7 +252,14 @@ document.querySelector("#export-report").addEventListener("click", () => {
   link.download = `diagnostic-${slug || "resaisie-zero"}.md`;
   link.click();
   URL.revokeObjectURL(url);
+  exportButton.dataset.state = "success";
+  exportButtonLabel.textContent = "Diagnostic prêt";
   showToast("Diagnostic exporté.");
+  setTimeout(() => {
+    exportButton.disabled = false;
+    delete exportButton.dataset.state;
+    exportButtonLabel.textContent = "Exporter le diagnostic";
+  }, 1600);
 });
 
 syncSettings();
