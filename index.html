@@ -43,40 +43,65 @@
             <span class="section-number">01</span>
             <h2 id="audit-title">Décrivez votre parcours</h2>
           </div>
-          <label class="template-picker">
-            <span>Partir d’un modèle</span>
-            <select id="template-select">
+          <div class="template-picker">
+            <span id="template-label">Partir d’un modèle</span>
+            <div class="select-shell">
+              <button class="select-trigger" id="template-trigger" type="button" aria-expanded="false" aria-haspopup="listbox" aria-labelledby="template-label template-value">
+                <span class="select-value-wrap">
+                  <span id="template-value">Accueil d’un client</span>
+                  <small id="template-description">Collecte, rendez-vous, CRM et facturation</small>
+                </span>
+                <svg viewBox="0 0 20 20" aria-hidden="true"><path d="m6 8 4 4 4-4" /></svg>
+              </button>
+              <div class="select-menu" id="template-menu" role="listbox" aria-labelledby="template-label" hidden>
+                <button class="select-option" type="button" role="option" data-value="onboarding" aria-selected="true"><span>Accueil d’un client</span><small>Collecte, rendez-vous, CRM et facturation</small></button>
+                <button class="select-option" type="button" role="option" data-value="appointment" aria-selected="false"><span>Prise de rendez-vous</span><small>Messagerie, agenda et dossier client</small></button>
+                <button class="select-option" type="button" role="option" data-value="order" aria-selected="false"><span>Traitement d’une commande</span><small>Boutique, préparation, transport et facture</small></button>
+                <button class="select-option" type="button" role="option" data-value="blank" aria-selected="false"><span>Parcours vierge</span><small>Commencer avec deux étapes à personnaliser</small></button>
+              </div>
+            </div>
+            <select id="template-select" class="visually-hidden" tabindex="-1" aria-hidden="true">
               <option value="onboarding">Accueil d’un client</option>
               <option value="appointment">Prise de rendez-vous</option>
               <option value="order">Traitement d’une commande</option>
               <option value="blank">Parcours vierge</option>
             </select>
-          </label>
+          </div>
         </div>
 
         <form id="workflow-form">
           <div class="settings-grid">
-            <label>
-              <span>Nom du parcours</span>
-              <input id="workflow-name" name="name" autocomplete="off" />
+            <label class="field field-wide">
+              <span class="field-label">Nom du parcours</span>
+              <span class="field-control"><input id="workflow-name" name="name" autocomplete="off" /></span>
+              <small class="field-description">Utilisé pour nommer votre diagnostic exporté.</small>
             </label>
-            <label>
-              <span>Parcours / mois</span>
-              <input id="runs-per-month" name="runs" type="number" min="1" />
+            <label class="field">
+              <span class="field-label">Parcours / mois</span>
+              <span class="field-control number-field">
+                <button type="button" data-number-step="down" aria-label="Diminuer le nombre de parcours"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 10h10" /></svg></button>
+                <input id="runs-per-month" name="runs" type="number" min="1" step="1" />
+                <button type="button" data-number-step="up" aria-label="Augmenter le nombre de parcours"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 5v10M5 10h10" /></svg></button>
+              </span>
+              <small class="field-error">Saisissez au moins un parcours.</small>
             </label>
-            <label>
-              <span>Coût horaire (€)</span>
-              <input id="hourly-cost" name="cost" type="number" min="1" step="1" />
+            <label class="field">
+              <span class="field-label">Coût horaire (€)</span>
+              <span class="field-control number-field">
+                <button type="button" data-number-step="down" aria-label="Diminuer le coût horaire"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 10h10" /></svg></button>
+                <input id="hourly-cost" name="cost" type="number" min="1" step="1" />
+                <button type="button" data-number-step="up" aria-label="Augmenter le coût horaire"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 5v10M5 10h10" /></svg></button>
+              </span>
+              <small class="field-error">Le coût doit être supérieur à zéro.</small>
             </label>
-            <label>
-              <span>Minutes / ressaisie</span>
-              <input
-                id="minutes-per-copy"
-                name="minutes"
-                type="number"
-                min="0.1"
-                step="0.1"
-              />
+            <label class="field">
+              <span class="field-label">Minutes / ressaisie</span>
+              <span class="field-control number-field">
+                <button type="button" data-number-step="down" aria-label="Diminuer la durée"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 10h10" /></svg></button>
+                <input id="minutes-per-copy" name="minutes" type="number" min="0.1" step="0.1" />
+                <button type="button" data-number-step="up" aria-label="Augmenter la durée"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 5v10M5 10h10" /></svg></button>
+              </span>
+              <small class="field-error">La durée doit être supérieure à zéro.</small>
             </label>
           </div>
 
@@ -172,25 +197,21 @@
       <li class="step-card">
         <div class="step-index" aria-hidden="true"></div>
         <div class="step-fields">
-          <label>
-            <span>Étape</span>
-            <input data-field="name" autocomplete="off" />
+          <label class="field">
+            <span class="field-label">Étape</span>
+            <span class="field-control"><input data-field="name" autocomplete="off" /></span>
           </label>
-          <label>
-            <span>Outil utilisé</span>
-            <input data-field="tool" autocomplete="off" />
+          <label class="field">
+            <span class="field-label">Outil utilisé</span>
+            <span class="field-control"><input data-field="tool" autocomplete="off" /></span>
           </label>
-          <label class="fields-input">
-            <span>Informations saisies</span>
-            <input
-              data-field="fields"
-              autocomplete="off"
-              placeholder="nom, e-mail, adresse"
-            />
+          <label class="field fields-input">
+            <span class="field-label">Informations saisies</span>
+            <span class="field-control"><input data-field="fields" autocomplete="off" placeholder="nom, e-mail, adresse" /></span>
           </label>
         </div>
         <button class="remove-step" type="button" aria-label="Supprimer cette étape">
-          ×
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="m6 6 8 8M14 6l-8 8" /></svg>
         </button>
       </li>
     </template>

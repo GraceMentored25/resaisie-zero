@@ -103,6 +103,71 @@ function syncSettings() {
   elements.minutes.value = state.minutesPerCopy;
 }
 
+function initTemplateSelect() {
+  const trigger = document.querySelector("#template-trigger");
+  const menu = document.querySelector("#template-menu");
+  const value = document.querySelector("#template-value");
+  const description = document.querySelector("#template-description");
+  const options = [...menu.querySelectorAll(".select-option")];
+
+  const close = (restoreFocus = false) => {
+    menu.hidden = true;
+    trigger.setAttribute("aria-expanded", "false");
+    if (restoreFocus) trigger.focus();
+  };
+
+  const open = () => {
+    menu.hidden = false;
+    trigger.setAttribute("aria-expanded", "true");
+    options.find((option) => option.getAttribute("aria-selected") === "true")?.focus();
+  };
+
+  const selectOption = (option) => {
+    options.forEach((item) => item.setAttribute("aria-selected", String(item === option)));
+    value.textContent = option.querySelector("span").textContent;
+    description.textContent = option.querySelector("small").textContent;
+    elements.template.value = option.dataset.value;
+    elements.template.dispatchEvent(new Event("change", { bubbles: true }));
+    close(true);
+  };
+
+  trigger.addEventListener("click", () => (menu.hidden ? open() : close()));
+  trigger.addEventListener("keydown", (event) => {
+    if (["ArrowDown", "Enter", " "].includes(event.key)) {
+      event.preventDefault();
+      open();
+    }
+  });
+
+  menu.addEventListener("keydown", (event) => {
+    const currentIndex = options.indexOf(document.activeElement);
+    if (event.key === "Escape") return close(true);
+    if (event.key === "ArrowDown" || event.key === "ArrowUp") {
+      event.preventDefault();
+      const direction = event.key === "ArrowDown" ? 1 : -1;
+      options[(currentIndex + direction + options.length) % options.length].focus();
+    }
+    if (event.key === "Home") options[0].focus();
+    if (event.key === "End") options.at(-1).focus();
+  });
+
+  options.forEach((option) => option.addEventListener("click", () => selectOption(option)));
+  document.addEventListener("pointerdown", (event) => {
+    if (!event.target.closest(".select-shell")) close();
+  });
+}
+
+function initNumberFields() {
+  document.querySelectorAll("[data-number-step]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const input = button.closest(".number-field").querySelector("input");
+      button.dataset.numberStep === "up" ? input.stepUp() : input.stepDown();
+      input.dispatchEvent(new Event("input", { bubbles: true }));
+      input.focus();
+    });
+  });
+}
+
 function renderSteps() {
   elements.steps.replaceChildren();
   state.steps.forEach((step, index) => {
@@ -262,6 +327,8 @@ exportButton.addEventListener("click", async () => {
   }, 1600);
 });
 
+initTemplateSelect();
+initNumberFields();
 syncSettings();
 renderSteps();
 renderAnalysis();
