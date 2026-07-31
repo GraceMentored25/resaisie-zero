@@ -36,10 +36,14 @@ npm.cmd run check
 
 Ces adaptations conservent les interactions essentielles des composants sources tout en respectant les performances, l’accessibilité et les design tokens propres à ReSaisie Zéro.
 
+## Référence d’interface
+
+La présentation des résultats adapte le [système Visitors sur Refero](https://styles.refero.design/style/e7876363-181a-44a9-9e5c-2255cf98aea5) : panneau analytique sobre, bordures fines, hiérarchie claire des métriques et accent lavande. Le contenu, la palette et les interactions restent propres à ReSaisie Zéro.
+
 ## Confidentialité
 
 L’application ne possède ni compte utilisateur, ni API, ni serveur applicatif. Le parcours saisi est conservé dans le `localStorage` du navigateur et peut être effacé depuis l’interface.
 
 ## Version
 
-Version actuelle : **1.3.1**
+Version actuelle : **1.4.0**

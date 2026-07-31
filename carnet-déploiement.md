@@ -2,7 +2,7 @@
 
 | N° | MVP | Version | GitHub | Application Vercel |
 |---:|---|---:|---|---|
-| 1 | ReSaisie Zéro — audit anti-copier-coller pour TPE | 1.3.1 | [GitHub](https://github.com/GraceMentored25/resaisie-zero) | [Ouvrir l’application](https://resaisie-zero.vercel.app) |
+| 1 | ReSaisie Zéro — audit anti-copier-coller pour TPE | 1.4.0 | [GitHub](https://github.com/GraceMentored25/resaisie-zero) | [Ouvrir l’application](https://resaisie-zero.vercel.app) |
 
 ## Historique
 
@@ -15,3 +15,4 @@
 - **2026-07-31 — 1.2.0 :** interface retravaillée avec le taste-skill et deux composants 21st.dev adaptés : Spotlight Card et Interactive Hover Button.
 - **2026-07-31 — 1.3.0 :** formulaires et sélecteur retravaillés avec les composants 21st.dev Field, NumberField et Flexnative Select, avec navigation clavier et validation visible.
 - **2026-07-31 — 1.3.1 :** suppression du doublon de sélection exposé et validation inline déterministe avec `aria-invalid`.
+- **2026-07-31 — 1.4.0 :** affichage premium des résultats inspiré du système Visitors de Refero, avec panneau analytique, hiérarchie renforcée des métriques et cache des ressources corrigé.

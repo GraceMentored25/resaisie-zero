@@ -224,7 +224,7 @@ function renderAnalysis() {
     elements.costSaved.textContent = `${numberFr.format(
       analysis.costSavedPerYear,
     )} €`;
-    elements.resultLabel.textContent = "Diagnostic en direct";
+    elements.resultLabel.lastChild.textContent = " Diagnostic en direct";
 
     if (analysis.priority) {
       elements.priorityTitle.textContent = `${analysis.priority.from} → ${analysis.priority.to}`;
@@ -244,7 +244,7 @@ function renderAnalysis() {
     elements.costSaved.textContent = "—";
     elements.priorityTitle.textContent = "Diagnostic incomplet";
     elements.priorityCopy.textContent = error.message;
-    elements.resultLabel.textContent = "À compléter";
+    elements.resultLabel.lastChild.textContent = " À compléter";
     elements.automationFit.textContent = "Le conseil de mise en œuvre apparaîtra ici.";
   }
 }

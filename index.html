@@ -10,7 +10,7 @@
     <meta name="theme-color" content="#17113d" />
     <link rel="icon" href="/public/assets/favicon.svg" type="image/svg+xml" />
     <title>ReSaisie Zéro — Libérez du temps dans vos parcours clients</title>
-    <link rel="stylesheet" href="/src/styles.css" />
+    <link rel="stylesheet" href="/src/styles.css?v=1.4.0" />
   </head>
   <body>
     <header class="site-header">
@@ -127,32 +127,50 @@
             <span class="section-number section-number-light">03</span>
             <h2 id="results-title">Ce que vous pouvez récupérer</h2>
           </div>
-          <span id="result-label" class="live-label">Diagnostic en direct</span>
+          <span id="result-label" class="live-label">
+            <span class="status-dot" aria-hidden="true"></span>
+            Diagnostic en direct
+          </span>
         </div>
 
-        <div class="metrics" aria-live="polite">
-          <article>
-            <span>Ressaisies / parcours</span>
-            <strong id="duplicate-count">—</strong>
-          </article>
-          <article>
-            <span>Heures / an</span>
-            <strong id="hours-saved">—</strong>
-          </article>
-          <article class="metric-accent">
-            <span>Économie / an</span>
-            <strong id="cost-saved">—</strong>
-          </article>
-        </div>
+        <div class="impact-panel">
+          <div class="impact-panel-head">
+            <div>
+              <span class="panel-kicker">Impact estimé</span>
+              <p>Projection annuelle à partir de votre parcours actuel.</p>
+            </div>
+            <span class="calculation-note">Calcul local</span>
+          </div>
 
-        <div class="recommendation spotlight-card">
-          <span class="recommendation-kicker">Premier chantier recommandé</span>
-          <h3 id="priority-title">Complétez au moins deux étapes</h3>
-          <p id="priority-copy">
-            Le diagnostic apparaîtra ici dès qu’une donnée sera recopiée.
-          </p>
+          <div class="metrics" aria-live="polite">
+            <article>
+              <span>Ressaisies par parcours</span>
+              <strong id="duplicate-count">—</strong>
+              <small>copies évitables à chaque passage</small>
+            </article>
+            <article>
+              <span>Temps récupérable</span>
+              <div class="metric-value"><strong id="hours-saved">—</strong><em>h / an</em></div>
+              <small>capacité rendue à votre équipe</small>
+            </article>
+            <article class="metric-accent">
+              <span>Économie potentielle</span>
+              <strong id="cost-saved">—</strong>
+              <small>coût annuel évitable estimé</small>
+            </article>
+          </div>
+
+          <div class="insight-grid">
+            <div class="recommendation spotlight-card">
+              <span class="recommendation-kicker">Premier chantier recommandé</span>
+              <h3 id="priority-title">Complétez au moins deux étapes</h3>
+              <p id="priority-copy">
+                Le diagnostic apparaîtra ici dès qu’une donnée sera recopiée.
+              </p>
+            </div>
+            <div id="automation-fit" class="automation-fit" aria-live="polite"></div>
+          </div>
         </div>
-        <div id="automation-fit" class="automation-fit" aria-live="polite"></div>
 
         <div class="result-actions">
           <button class="button button-primary interactive-hover-button" id="export-report" type="button">
@@ -217,6 +235,6 @@
     </template>
 
     <div id="toast" class="toast" role="status" aria-live="polite"></div>
-    <script type="module" src="/src/app.js"></script>
+    <script type="module" src="/src/app.js?v=1.4.0"></script>
   </body>
 </html>
